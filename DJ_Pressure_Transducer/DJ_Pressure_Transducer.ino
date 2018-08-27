@@ -1,5 +1,5 @@
 // Kelvin Po Jul 12, 2018
-
+// For reading two DJ Instruments MOD DF2-SS-02-250-5V Pressure Transducers
 
 #include "Definitions.h"
 
@@ -7,6 +7,7 @@
 const double RESOLUTION = 1023.0;
 const double PTRANGE = 4.0;
 const double REFERENCE = 5.0;
+const int delayTime = 150;
 double maxPSI = 250.0;
 // double m = maxPSI*((PTRANGE/REFERENCE)*RESOLUTION);
 double m1 = 70.166;
@@ -19,7 +20,6 @@ double readVal1;
 double readVal2;
 double pressure1;
 double pressure2;
-
 double voltage1;
 double voltage2;
 
@@ -65,9 +65,9 @@ void loop()
 	Serial.print(pressure2);
 	Serial.println(" PSI");
 	digitalWrite(testLEDPin, HIGH);
-	delay(250);
+	delay(delayTime);
 	digitalWrite(testLEDPin, LOW);
-	delay(250);
+	delay(delayTime);
 
 }
 
